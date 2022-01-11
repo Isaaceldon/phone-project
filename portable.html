@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>portable</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="fontawesome/all.min.css">
+    <style type="text/css">
+        #phone {
+            width: 360px;
+            height: 650px;
+            border: 6px solid black;
+            border-radius: 115px;
+            text-align: center;
+            background-color: #000030;
+            /*position: absolute;*/
+            position: relative;
+            margin: 0px auto;
+        }
+        
+        #ecran {
+            width: 325px;
+            height: 500px;
+            border: 2px solid black;
+            text-align: center;
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            background-color: rgba(236, 240, 241, 0.8);
+        }
+        
+        .haut {
+            border-radius: 25px;
+            width: 100px;
+            height: 8px;
+            color: black;
+            border: 2px solid white;
+            top: 40px;
+            position: absolute;
+            text-align: center;
+            display: inline-block;
+            left: 118px;
+        }
+        
+        #ecran {
+            background-image: url("img/profil1.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: local;
+        }
+        
+        #ecran::after {
+            content: 'SAMSUNG';
+            font-weight: bold;
+            font-size: 45px;
+            right: 60px;
+            top: 50%;
+            position: absolute;
+            color: black;
+        }
+        
+        .bleu {
+            border: 1px solid black;
+            background-color: #03b103;
+            width: 14px;
+            height: 14px;
+            left: 250px;
+            top: 35px;
+            position: absolute;
+            border-radius: 100%;
+            animation: portable;
+            animation-timing-function: ease;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes portable {
+            to {
+                background-color: blue;
+            }
+        }
+        
+        .bas {
+            position: absolute;
+            bottom: 20px;
+            left: 70px;
+            font-size: 30px;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border: 5px solid white;
+        }
+        
+        .chevron {
+            left: 260px;
+            font-size: 48px;
+            font-weight: bold;
+            position: absolute;
+            bottom: 15px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .rond {
+            border: 3px solid white;
+            width: 30px;
+            height: 30px;
+            left: 155px;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .touche1 {
+            height: 55px;
+            width: 8px;
+            border: 2px solid black;
+            position: absolute;
+            top: 150px;
+            left: 360px;
+            border-radius: 10px;
+            background-color: #000030;
+        }
+        
+        .touche2 {
+            height: 55px;
+            width: 8px;
+            border: 2px solid black;
+            position: absolute;
+            top: 215px;
+            left: 360px;
+            border-radius: 10px;
+            background-color: #000030;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="phone">
+        <center><span class="haut"></span></center><span class="bleu"></span>
+        <div id="ecran"></div><span class="bas"></span><span class="rond"></span><i class="fas fa-chevron-right chevron"></i><span class="touche1"></span><span class="touche2"></span></div>
+
+    <script type="text/javascript">
+        var paragraphe1 = document.getElementById('ecran');
+        var heure = setInterval(horloge, 1000);
+
+        function horloge() {
+
+            var d = new Date();
+            paragraphe1.innerHTML = '\t' + d.toLocaleTimeString();
+            paragraphe1.style.color = 'blue';
+            paragraphe1.style.fontSize = '50px';
+            paragraphe1.style.top = '';
+            paragraphe1.style.right = '';
+        }
+    </script>
+</body>
+
+</html>
